@@ -1,0 +1,28 @@
+﻿Summary:
+The mediator pattern is one used where several components interact with eachother through a 'Mediator' class, thereby reudcing coupling of these  components
+to eachother.
+
+Use case:
+1 - When it's hard to change some of the classes because they're too tightly coupled to eachother
+2 - When you can't reuse a component in a different program because it's too dependant on other components
+3 - When you find yourself creating a ton of subclasses to reuse basic behaviour
+
+
+Pros:
+1 - Follows single responsibility principle by extracting communication between components to one place
+2 - Follows open/closed principle as you can introduce new mediators without changing actual components
+3 - Reduces coupling between components
+4 - Can reuse individual components more easily due to decoupling
+
+Cons:
+1 - Over time can become a 'god object' - AKA the dreaded 20000 line manager class
+
+Compared to other patterns:
+1 - Facade has a similar job: they both try to organise collbaeration between lots of tightly coupled classes
+	Facade defines a simplified interface to a subsystem of objects, but doesn't introduce any new functionality. The subsystem itself is unaware of the facade
+	and objects within the subsystem can comminicate directly
+2 - Chain of responsibility, command and observer address various ways of connecting senders and recievers of requests:
+	- Chain of responsibility passes a request sequentiallly along a dynamic chain of potential recievers until one of them handles it
+	- Command establishes unidirectional connection between senders and recievers
+	- Mediator eliminates direct connection, forcing them to communicate indirectly via a 'middle man'
+	- Observer lets recievers dynmaically subscribe and unsubscribe from receieving requests
